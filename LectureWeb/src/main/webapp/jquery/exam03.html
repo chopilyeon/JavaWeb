@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+  //innerHTML innerTEXT // 태그를 텍스트로 인식할건지 테그로 인식할건지. 
+  
+  //P태그를 읽어오고 싶음 
+/*   let pTags = document.getElementsByTagName("p")
+  let html = pTags[0].innerHTML
+  let text = pTags[0].innerText */
+    
+  
+ /*  pTags[1].innerHTML='<mark>GOOD</mark>'
+  pTags[1].innerText='<mark>GOOD</mark>'  *///이렇게 쓰면 text로 인식함 
+ /*  alert('html : ' + html)
+  alert('html : ' + html + '\ntext: ' +text) */
+	//이제 jquery로 읽어보자
+  
+  let html=$('p').html() // console 창에 갈겨보자. 
+  let text=$('p').text() // 이러면  p태그 모든 걸 뽑아와서 하나로 만들어버림 2개가 다 나옴 
+  let attr=$('a').attr('href')	
+	
+	// p태그임 
+
+alert('html : ' + html)
+alert('html : ' + html + '\ntext: ' +text)
+	
+alert('html : ' + html + '\ntext: ' +text + '\n주소:' + attr)
+	
+
+
+
+//근데 이걸 이제 jquery로 뽑아오고 싶더라~ 
+
+
+
+
+//고전적인 방식으로는 이렇게 씀 
+	//btn.onclick = function()
+
+	
+	//이럴 때 쓸 수 있는 것 
+	$('button').click(function(){
+		let name = $('#name').val()
+		alert('name : ' + name)
+	})
+	
+	$('#btn02').click(function(){
+		$('a').attr('href','http://www.daum.net')	
+	})
+	$('#btn03').click(function(){
+		//$('p').html('<mark>문장변환</mark>') //이러면 두개 다 바꿔버림. 
+		$('p').html(function(index,element){  //이러면 aaa가 들어가는것임. 
+			//console.log(arguments.length) // p태그가 2개이므로 function이 2번 호출이 되게 됨. p태그의 갯수만큼 function을 호출하게 된다! 
+			console.log(index,element)
+			return '<mark>' + index + ':' + element + '</mark>'
+			//return "aaa"
+			
+		}) // ptag 를 하나하나 마다 고쳐주게 할 수 있음 
+		
+	})
+})
+</script>
+
+
+
+
+</head>
+<body>
+	<p>
+		내 이름은 <b>홍길동</b>이고, 별명은 <i>의적</i>입니다
+	</p>
+	<p>
+		내 이름은 <strong>홍길순</strong>이고, 별명은 <em>의적2</em>입니다
+	</p>
+	이름:<input type="text" id="name"><button id="btn01"> 입력완료</button><br>
+	<a href="http://www.naver.com">사이트로 이동</a><button id ="btn02">주소변경</button><br>
+	<button id="btn03">문장변환</button>
+	
+
+
+</body>
+</html>

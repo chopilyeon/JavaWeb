@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+/*
+	$('#btn01').click(function(){
+		let h1Tag=document.createElement('h1')
+		let text=document.createTextNode("세번째 문장")
+		h1Tag.appendChild(text)
+		let divTag=document.querySelector('div')
+		divTag
+		divTag.appendChild(h1Tag)
+	})
+*/	$('#btn01').click(function(){
+	
+	//$('div').append('<h1>세번째 문장</h1>')
+	$('div').prepend('<h1>세번째 문장</h1>') // 이거는 큰자식으로 들어가게 됨 
+	//div의 자식태그로 넣어주겠다 이거임. 위에꺼보다 훨씬 간단함. 
+})
+	
+	
+})
+</script>
+
+
+
+</head>
+<body>
+	<div>
+		<h1>첫번째 문장</h1>
+		<h2>두번째 문장</h2>
+	</div>
+	<ol>
+		<li>빨강</li>
+		<li>파랑</li>
+		<li>초록</li>
+			
+	</ol>
+	<button id="btn01">문장추가</button>
+	<button id="btn02">색상추가</button>
+
+</body>
+</html>

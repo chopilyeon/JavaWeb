@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+
+})
+</script>
+
+
+
+
+</head>
+<body>
+	<p>
+		내 이름은 <b>홍길동</b>이고, 별명은 <i>의적<</i>입니다
+	</p>
+
+</body>
+</html>

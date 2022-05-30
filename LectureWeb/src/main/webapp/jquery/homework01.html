@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#day{
+		display:flex;
+		padding:50px 60px;
+	}
+	
+	.mon{
+		background-color:red;
+		text-align:center;
+	}
+	.tue{
+		background-color:orange;
+	}
+	.wed{
+		background-color:yellow;
+	}
+	
+	.thu{
+		background-color:green;
+	}
+	.fri{
+		background-color:blue;
+	}
+	.sat{
+		background-color:navy;
+	}
+	.sun{
+		background-color:purple;
+	}
+	
+	
+	.box{
+		width:200px;
+		height:150px;
+		text-align:center;
+		font-weight:bold;
+		font-size:30px;
+	}
+	
+	.box{
+		display:flex;
+		align-items:center;
+		text-align:center;
+		justify-content:center;
+	}
+		
+	
+</style>
+
+
+
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+	$('.mon').hover(function(){
+		$('.mon').html('월요일')
+		$('.mon').animate({
+			width:'300px',
+			height:'200px'
+		},500)
+	},function(){
+		$('.mon').html('월')
+		$('.mon').animate({
+			width:'200px',
+			height:'150px'
+		},500)
+	})
+	$('.tue').hover(function(){
+		$('.tue').html('화요일')
+		$('.tue').animate({
+			width:'300px',
+			height:'200px'
+		},500)
+	},function(){
+		$('.tue').html('화')
+		$('.tue').animate({
+			width:'200px',
+			height:'150px'
+		},500)
+	})
+	$('.wed').hover(function(){
+		$('.wed').html('수요일')
+		$('.wd').animate({
+			width:'300px',
+			height:'200px'
+		},500)
+	},function(){
+		$('.wed').html('수')
+		$('.wd').animate({
+			width:'200px',
+			height:'150px'
+		},500)
+	})
+	$('.thu').hover(function(){
+		$('.thu').html('목요일')
+		$('.thu').animate({
+			width:'300px',
+			height:'200px'
+		},500)
+	},function(){
+		$('.thu').html('목')
+		$('.thu').animate({
+			width:'200px',
+			height:'150px'
+		},500)
+	})
+	$('.fri').hover(function(){
+		$('.fri').html('금요일')
+		$('.fri').animate({
+			width:'300px',
+			height:'200px'
+		},500)
+	},function(){
+		$('.fri').html('금')
+		$('.fri').animate({
+			width:'200px',
+			height:'150px'
+		},500)
+	})
+	$('.sat').hover(function(){
+		$('.sat').html('토요일')
+		$('.sat').animate({
+			width:'300px',
+			height:'200px'
+		},500)
+	},function(){
+		$('.sat').html('토')
+		$('.sat').animate({
+			width:'200px',
+			height:'150px'
+		},500)
+	})
+	$('.sun').hover(function(){
+		$('.sun').html('일요일')
+		$('.sun').animate({
+			width:'300px',
+			height:'200px'
+		},500)
+	},function(){
+		$('.sun').html('일')
+		$('.sun').animate({
+			width:'200px',
+			height:'150px'
+		},500)
+	})
+	
+	
+	
+	
+	
+	
+})
+
+</script>
+
+
+
+</head>
+<body>
+ <div id="day">
+	<div class='box mon btn1'>월</div>
+	<div class='box tue btn2'>화</div>
+	<div class='box wed btn3'>수</div>
+	<div class='box thu btn4'>목</div>
+	<div class='box fri btn5'>금</div>
+	<div class='box sat btn6'>토</div>
+	<div class='box sun btn7'>일</div>
+ </div>
+</body>
+</html>

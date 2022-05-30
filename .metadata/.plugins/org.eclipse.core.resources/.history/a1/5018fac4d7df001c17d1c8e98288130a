@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//body가 다 upload 되면은 alert창 띄우고 싶음 여기서 바로 읽으면은 위에서 부터 읽을 때 body 읽지도 안핬는데 읽으므로 이상해짐 -> body를 다 읽었을 때 부르는 함수가 window upload임 
+	window.onload = function(){
+		alert('hello')
+	}
+	
+	window.onload = function(){
+		document.write('good!!!') //실행이 될까 안될까? -> 밑에만 이것만 실행이 됨. 덮어쓰기함. 위에꺼는 무시가 됨. 이래서 good밖에 안 쳐짐. 
+									//javascript는 하나라도 에러나면 다 안됨. window.onload 아무리 많이 해봐야 하나밖에 실행이 안됨. 
+									//이게 근데 불편함 모듈처럼 관리하고 싶은데 -> 이래서 jquery에서 함수가 만들어 지더라~!! 
+									//jquery함수를 실행하고 싶을때는 $로 시작을 하더라 
+	}
+	//jquery 는 이렇게 씀. 
+	$(선택자).함수 
+	$(document).ready(function(){ //매개변수로 함수를 넘기겠다 이거임. 
+		alert('hello'); //개발자 도구로 실행해서 보자 
+	}) //onload랑 똑같은 것임.  이럴 때 callback 함수를 날리자.  
+	
+	
+</script>
+</head>
+<body>
+
+
+
+
+</body>
+</html>

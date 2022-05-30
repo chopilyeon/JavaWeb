@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function clickBtn() {
+		num = 10 // var 를 쓰면은 이것도 지역성인데 호이스팅이 됨 
+		//그냥 num만 쓰면 다 쓸 수 있게 됨.
+	}
+	
+	function clickBtn2() {
+		alert(num)
+	}
+</script>
+</head>
+<body>
+	<button onclick = "clickBtn()">생성</button>
+	<button onclick = "clickBtn2()">확인</button>
+</body>
+</html>

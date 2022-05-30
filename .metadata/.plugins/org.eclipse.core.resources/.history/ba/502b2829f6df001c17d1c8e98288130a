@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function clickBtn() {
+		var num = 10
+	}
+	
+	function clickBtn2() {
+		alert(num)
+	}
+</script>
+</head>
+<body>
+	<button onclick = "clickBtn()"></button>
+	<button onclick = "clickBtn2()"></button>
+</body>
+</html>

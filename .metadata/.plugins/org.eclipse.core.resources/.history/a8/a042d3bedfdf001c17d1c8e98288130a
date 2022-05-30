@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1{
+		display:none
+	}
+</style>
+
+
+
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+	$(document).ready(function(){ 
+		alert('!')
+	/* 	let h1Tag=document.getElementsByTagName('h1')[0]
+		h1Tag=setAttribute("style","display:block"); // 속성을 추가함. 
+	 */
+	 /*너무 귀찮음   */
+	 
+	 $('h1').show(3000) // display를 block으로 만들어줌 3초에 걸쳐서 보여줘 이런것임 show의 반대는 hide임. 접기 펼치기 이런 거 생각하면 됨  
+	 $('h1').show('slow') // slow가 기본적으로 가지고 있는 초가 있음 
+	 $('h1').fadein(5000)
+	 
+})
+</script>
+
+<!--css 먼저 정의한다음에 자바스크립트 적용해야함   -->
+
+</head>
+<body>
+	<h1 style="diplay:block">hello JQUERY</h1>
+</body>
+</html>

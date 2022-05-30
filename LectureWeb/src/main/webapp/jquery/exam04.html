@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	.red{
+		color:red
+	}
+	
+	.blue{
+		color:blue
+	}
+	
+	
+</style>
+
+
+
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+/*
+	$('#btn01').click(function(){
+		let h1Tag=document.createElement('h1')
+		let text=document.createTextNode("세번째 문장")
+		h1Tag.appendChild(text)
+		let divTag=document.querySelector('div')
+		divTag
+		divTag.appendChild(h1Tag)
+	})
+	//이렇게 한방에 해결할 수 있음 
+	*/	
+	$('#btn01').click(function(){
+	//댓글이 위에 달리는지 밑에 달리는지는 여기서 설정한다!! 
+	//$('div').append('<h1>세번째 문장</h1>')
+	$('div').prepend('<h1>세번째 문장</h1>') // 이거는 큰자식으로 들어가게 됨 
+	//div의 자식태그로 넣어주겠다 이거임. 위에꺼보다 훨씬 간단함. 
+})
+	$('#btn02').click(function(){
+		$('ol').append('<li>노랑</li>','<li>보라</li>')
+	})
+	
+	
+	//<after> 치면은 바로 옆에다가 만들 수 있음. 
+	//after('<button>')
+	//before()
+	$('#btn03').click(function(){
+		$('div').before('<a href="http://www.naver.com">네이버</a>') // 형제로 가는게 before after 
+	})
+	
+	
+	//자식으로 가는게 append prepend임 
+	 
+	//let은 지역변수임 pTags값 인식을 못함. 윈도우 객체에 추가시키자!! 
+	$('#btn04').click(function(){
+		/* let pTags=document.querySelectorAll('h1') // let을 이런식으로 쓰면은 block안에서만 놀 수 있음  let안 붙이면은 윈도우 객체에 들어감. 
+		for(let i = 0; i<pTags.length;i++){
+			//pTags[i].remove() //이게 안먹을 수도 있으니 
+			ptags[i].parentNode.removeChild(pTags[i]) //부모 태그를 찾아서 그 아이를 찾아내라~!! 
+		}
+		 */
+		$('div').remove() // 이러면 div를 지워버림 우리는 자식들을 지우고 싶음. 
+		$('div').empty() // 이러면 자식만 지워버림.
+		$('div>*').remove('h1') // 이렇게 h1 태그만 지울 수도 있음. //div 의 자식중에 h1태그!!!!! 
+		// .remove('.c01','#id01') // 이렇게도 지울 수 있다
+		//$('div>h1') // h1만 갖고 오라!! 
+	})
+	
+	$('#btn05').click(function(){
+		$('h1').addClass('red blue')
+	})
+	//같은 칼라를 써줬지만 블루가 적용이 될것임 // 마지막에 색깔을 블루 맥여놨으므로
+	$('#btn06').click(function(){
+		$('h1').removeClass('blue')
+	})
+	
+	
+	//bootstrap 에서 addclass랑 removeclass는 반드시 알고 있자!~ 
+	
+	
+	
+})
+</script>
+
+
+
+</head>
+<body>
+	<div>
+		<h1>첫번째 문장</h1>
+		<h1>두번째 문장</h1>
+		<h2>서브문장</h2>
+	</div>
+	<ol>
+		<li>빨강</li>
+		<li>파랑</li>
+		<li>초록</li>
+			
+	</ol>
+	<button id="btn01">문장추가</button>
+	<button id="btn02">색상추가</button>
+	<button id="btn03">링크추가</button>
+	<button id="btn04">문장삭제</button>
+	<button id="btn05">색상설정</button>
+	<button id="btn05">.blue 삭제</button>
+	
+
+</body>
+</html>

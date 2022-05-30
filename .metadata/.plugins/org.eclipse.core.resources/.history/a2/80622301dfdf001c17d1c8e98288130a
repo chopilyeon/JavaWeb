@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1{
+		display:none
+	}
+</style>
+
+
+
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+	$(document).ready(function(){ 
+
+	})
+</script>
+
+<!--css 먼저 정의한다음에 자바스크립트 적용해야함   -->
+
+</head>
+<body>
+	<h1 style="diplay:block">hello</h1>
+</body>
+</html>

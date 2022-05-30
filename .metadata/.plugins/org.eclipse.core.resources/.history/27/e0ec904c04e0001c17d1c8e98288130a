@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#day{
+		display:flex;
+		padding:50px 60px;
+	}
+	
+	.mon{
+		background-color:red;
+		text-align:center;
+	}
+	.tue{
+		background-color:orange;
+	}
+	.wed{
+		background-color:yellow;
+	}
+	
+	.thu{
+		background-color:green;
+	}
+	.fri{
+		background-color:blue;
+	}
+	.sat{
+		background-color:navy;
+	}
+	.sun{
+		background-color:purple;
+	}
+	
+	
+	.box{
+		width:200px;
+		height:150px;
+		text-align:center;
+		font-weight:bold;
+		font-size:30px;
+		
+	}
+	
+		
+	
+</style>
+
+
+
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+	$('.mon').mouseover(function(){
+		$('.mon').html('<mark>월요일</mark')
+		$('.mon').css('background-color','white')
+		
+	})
+	$('.tue').mouseover(function(){
+		$('.tue').html('<mark>화요일</mark')
+	})
+	$('.wed').mouseover(function(){
+		$('.wed').html('<mark>수요일</mark')
+	})
+	$('.thu').mouseover(function(){
+		$('.thu').html('<mark>목요일</mark')
+	})
+	$('.fri').mouseover(function(){
+		$('.fri').html('<mark>금요일</mark')
+	})
+	$('.sat').mouseover(function(){
+		$('.sat').html('<mark>토요일</mark')
+	})
+	$('.sun').mouseover(function(){
+		$('.sun').html('<mark>일요일</mark')
+	})
+	
+	
+	
+	
+	
+	
+})
+
+</script>
+
+
+
+</head>
+<body>
+ <div id="day">
+	<div class='box mon'>월</div>
+	<div class='box tue'>화</div>
+	<div class='box wed'>수</div>
+	<div class='box thu'>목</div>
+	<div class='box fri'>금</div>
+	<div class='box sat'>토</div>
+	<div class='box sun'>일</div>
+ </div>
+</body>
+</html>

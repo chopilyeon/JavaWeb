@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#day{
+		display:flex;
+		padding:50px 60px;
+	}
+	
+	.mon{
+		background-color:red;
+		text-align:center;
+	}
+	.tue{
+		background-color:orange;
+	}
+	.wed{
+		background-color:yellow;
+	}
+	
+	.thu{
+		background-color:green;
+	}
+	.fri{
+		background-color:blue;
+	}
+	.sat{
+		background-color:navy;
+	}
+	.sun{
+		background-color:purple;
+	}
+	
+	
+	.box{
+		width:200px;
+		height:150px;
+		text-align:center;
+		font-weight:bold;
+		font-size:30px;
+	}
+	
+		
+	
+</style>
+
+
+
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+	$('.mon').hover(function(){
+		$('.mon').html('월요일')
+	},funtion(){
+		$('.mon').html('월')
+	})
+	$('.tue').mouseover(function(){
+		$('.tue').html('화요일')
+	})
+	$('.wed').mouseover(function(){
+		$('.wed').html('수요일')
+	})
+	$('.thu').mouseover(function(){
+		$('.thu').html('목요일')
+	})
+	$('.fri').mouseover(function(){
+		$('.fri').html('금요일')
+	})
+	$('.sat').mouseover(function(){
+		$('.sat').html('토요일')
+	})
+	$('.sun').mouseover(function(){
+		$('.sun').html('일요일')
+	})
+	/* 
+	$('.mon').mouseleave(function(){
+		$('.mon').html('월')
+	})
+	$('.tue').mouseleav(function(){
+		$('.tue').html('화')
+	})
+	$('.wed').mouseleave(function(){
+		$('.wed').html('수')
+	})
+	$('.thu').mouseleave(function(){
+		$('.thu').html('목')
+	})
+	$('.fri').mouseleave(function(){
+		$('.fri').html('금')
+	})
+	$('.sat').mouseleave(function(){
+		$('.sat').html('토')
+	})
+	$('.sun').mouseleave(function(){
+		$('.sun').html('일')
+	})
+	
+	 */
+	
+	
+	
+	
+	
+	
+})
+
+</script>
+
+
+
+</head>
+<body>
+ <div id="day">
+	<div class='box mon btn1'>월</div>
+	<div class='box tue btn2'>화</div>
+	<div class='box wed btn3'>수</div>
+	<div class='box thu btn4'>목</div>
+	<div class='box fri btn5'>금</div>
+	<div class='box sat btn6'>토</div>
+	<div class='box sun btn7'>일</div>
+ </div>
+</body>
+</html>

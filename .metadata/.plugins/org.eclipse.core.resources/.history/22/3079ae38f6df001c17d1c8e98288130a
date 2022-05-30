@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function clickBtn() {
+		var num = 10
+	}
+	
+	function clickBtn2() {
+		alert(num)
+	}
+</script>
+</head>
+<body>
+	<button onclick = "clickBtn()">생성</button>
+	<button onclick = "clickBtn2()">확인</button>
+</body>
+</html>

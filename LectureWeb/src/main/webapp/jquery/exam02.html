@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!--css 먼저 정의한다음에 자바스크립트 적용해야함   -->
+
+<style>
+	h1{
+		display:none
+	}
+</style>
+
+
+
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+	$(document).ready(function(){ 
+		alert('!')
+	/* 	let h1Tag=document.getElementsByTagName('h1')[0]
+		h1Tag=setAttribute("style","display:block"); // 속성을 추가함. 
+	 */
+	 /*너무 귀찮음   */
+	 
+	 //$('h1').show(3000) // display를 block으로 만들어줌 3초에 걸쳐서 보여줘 이런것임 show의 반대는 hide임. 접기 펼치기 이런 거 생각하면 됨  
+	 //$('h1').show('slow') // slow가 기본적으로 가지고 있는 초가 있음 
+	 $('h1').fadeIn(5000)
+	 $('h1').slideDown(5000);
+		
+		
+		//3초에 "Hello JQUERY" 문장을 보인 후, 글자색을 파란색으로 변경한 후,
+		//슬라이드 효과로 올라갔다 내려갔다를 수행하고 배경색을 노란색으로 변경하자.  근데 배경색을 노란색, 글자색으로 빨간색으로 변경하고 싶으면? 
+		
+		//css 먹히게 하고 싶을때 css라는 함수를 사용함. 
+		$('h1').show(3000).css('color','blue') //우리는 3초동안 등장시키고 파랑으로 바뀌게 끔 하고 싶은 거임 
+		//show 하면은 그냥 바로 ; 이 찍혀버리므로 css가 먹히지 않음
+		//그래서  show를 수행하고 css 명령어가 먹혀야 됨 
+		//option으로 complete를 주어야 함 다 끝나고 duration동안 show를 다 수행하고 그 다음 속성을 수행하라는 것임 
+		$('h1').show(3000,function(){ //매개변수로 함수를 넘기면 complete 함수로 쓰고 있는 것임. 그래서  
+			$(this).css('color','blue') //this를 쓸 수 있음 실행되고 있는 내 태그 
+			$(this).slideUp(1000).slideDown(1000,function(){
+				$(this).css('background-color','yellow')
+			})
+		})
+		
+		
+})
+
+
+
+//슬라이드 효과로 올라갔다 내려갔다를 수행하고 배경색을 노란색으로 변경하자.  근데 배경색을 노란색, 글자색으로 빨간색으로 변경하고 싶으면? 
+
+		
+		
+// $('h1').show(3000).css('color','blue') //우리는 3초동안 등장시키고 파랑으로 바뀌게 끔 하고 싶은 거임 
+		//show 하면은 그냥 바로 ; 이 찍혀버리므로 css가 먹히지 않음
+		//그래서  show를 수행하고 css 명령어가 먹혀야 됨 
+		//option으로 complete를 주어야 함 다 끝나고 duration동안 show를 다 수행하고 그 다음 속성을 수행하라는 것임 
+	//	$('h1').show(3000,function(){ //매개변수로 함수를 넘기면 complete 함수로 쓰고 있는 것임. 그래서  
+	//		$(this).css('color','blue'); //this를 쓸 수 있음 실행되고 있는 내 태그 
+		//	$(this).slideUp(1000).slideDown(1000,fiunction(){
+				/*$(this).css('background-color','yellow').css('color','red') *///css 를 이렇게 계속 쓰는게 좋지 않음 json형태로 쓰더라 
+			//	$(this).css({
+		//			color:'red',
+			//		'background-color':yellow'
+				
+			//	})
+		//	})
+	//	})
+		
+		
+// })
+
+
+
+
+
+</script>
+
+
+</head>
+<body>
+
+	<h1 style="display:block">hello JQUERY</h1>
+
+</body>
+</html>

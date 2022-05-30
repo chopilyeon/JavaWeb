@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	div{
+		width:100px;
+		height:100px;
+		background-color:red;
+		position :absolute
+		}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){ 
+	$('div').animate({
+		width:'200px',
+		height:'200px',
+		left:'100px' //안움직이는 이유가 static이기 때문임     	
+	},2000)
+	//시작하는 위치도 변경할 수 있음. 
+	
+})
+</script>
+
+
+</head>
+
+
+<body>
+	<div></div>
+</body>
+</html>
