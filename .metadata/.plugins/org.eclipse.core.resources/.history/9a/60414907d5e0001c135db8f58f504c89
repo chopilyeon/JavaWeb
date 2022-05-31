@@ -129,14 +129,7 @@ $(document).on('click','#searchResult>button',function(){
 
 function callback2(result){
 	console.log(result);
-
-	
-	genres=result.movieInfoResult.movieInfo.genres
-	actors=result.movieInfoResult.movieInfo.actors
-	directors=result.movieInfoResult.movieInfo.directors
-	$('div').append(genres[0].genreNm)
-	$('div').append(directors[0].peopleNm)
-	$('div').append(actors[0].peopleNm)
+	result
 	
 	
 	

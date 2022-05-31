@@ -83,7 +83,6 @@ function callback(result){
 			$('#searchResult').append('<h4>'+rank+'위</h4>')
 			$('#searchResult').append(`<strong>${name}</strong>(${audiCnt}명)`) //$을 쓰므로 referal을 사용하자.
 			$('#searchResult').append(`<br><button id='movieCd_${movieCd}'>상세보기</button>`)
-			$('#searchResult').append('<div></div>')
 			$('#searchResult').append('<hr>')
 			/* console.log(list[i])
 			let rank =list[i].rank		
@@ -102,7 +101,7 @@ function callback(result){
 //document 객체중에 btn01 에다가 click이란 이벤트를 줄거야 받으면은 function을 수행하더라~ 줄거야가운데 있는 애가 대상이야 실제 해야될 일은 function을 주겠다!! 
 $(document).on('click','#searchResult>button',function(){
 	alert('!!!')
-	let movieCd=$(this).attr('id').split('_')[1]
+	movieCd=
 	
 		
 		$.ajax({
@@ -112,7 +111,7 @@ $(document).on('click','#searchResult>button',function(){
 			//필수 입력값인 key와 targetDt가 들어가야함 
 			,data:{
 				key:'284a9136382d4e01d2bd2befb8ed64ed'
-				,movieCd:movieCd
+				,movieCd:
 			},datetype:'jsonp'
 			,success:callback2			
 			/* success:function(){
@@ -129,16 +128,7 @@ $(document).on('click','#searchResult>button',function(){
 
 function callback2(result){
 	console.log(result);
-
-	
-	genres=result.movieInfoResult.movieInfo.genres
-	actors=result.movieInfoResult.movieInfo.actors
-	directors=result.movieInfoResult.movieInfo.directors
-	$('div').append(genres[0].genreNm)
-	$('div').append(directors[0].peopleNm)
-	$('div').append(actors[0].peopleNm)
-	
-	
+	alert('!!!')
 	
 	
 }
