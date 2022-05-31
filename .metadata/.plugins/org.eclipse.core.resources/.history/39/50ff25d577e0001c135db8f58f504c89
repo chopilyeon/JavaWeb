@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+	$('h1').click(function(){
+		$(this).css('color','red') //this 대신 h1이 다 바뀜 어떤 애에 대한 0번지인지 1번지인지 2번지인지 . 이벤트가 발생한 애한테 주는것임. 콜백이 실행되는 이벤트가 발생되는 무슨무슨 메소드를 실행했음 -> 그 호출한 객체가 누구인지
+	})
+	//현재 내가 이벤트가 가르킨 
+
+	$('h1').mouseenter(function(){
+		console.log(this); // 이렇게 찍어보면 this가 뭘 가르키는지 알 수 있음 
+		$(this).css('background-color','lightrey')
+	})
+	
+	$('h1').mouseleave(function(){
+		$(this).css('background-color','white')
+	})
+	
+	
+	
+	
+})
+</script>
+<body>
+
+	<h1>첫번째 문자</h1>
+	<h1>두번째 문장</h1>
+	<h1>세번째 문장</h1>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<textarea rows="10" cols="80" id="msgView"></textarea>
+	이름 : <input type="text" name="name"><br> 
+	<!-- class는 하나를 그룹으로 묶어서 관리하기 위한 목적임  -->
+	나이 : <input type="text" name="age"><br>
+	<button>전송</button>	
+	<!--name은  server쪽에 전달하기 위한 목적임   -->
+</body>
+</html>

@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+이름: $ {param.name }
+나이: $ {param.age }
+    
+    
+    
+    <!--이제 얘는 전송을 해줘야 함-->
+    
+    
+    <!--jsp는 html 위에 뭐 이상한게 붙더라  -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html> -->

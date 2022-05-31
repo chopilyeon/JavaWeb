@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{
+		width:150px;
+		height:120px;
+ 		float:left;  
+ 	/* 이걸로 div 썼을 때 display:flex 대신 주어도 됨  */
+	}
+	
+	button{
+		height:120px;
+		float:left;  
+		background-color:red;
+	}
+	
+	
+
+
+</style>
+
+
+
+
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+//이미지 슬라이더라는 걸 만들어보자! 
+
+
+
+
+
+$(document).ready(function(){ 
+/* 	$('button').click(function(){
+		//선택한 image를 맨앞으로 오게 하고 싶음 선택할 수 있어야 함 eq로 선택하도록 하자! 근데 몇개인지 모르므로 last와 first를 사용하자 그 이외에는 eq!! 
+		$('img').last().prependTo('body') //~의 맨 앞의 자식으로 옮기고 싶다 라는 뜻임 지금은 body 태그의 맨 처음으로 가야함  
+		//버튼때문에 append태그를 사용할 수 없으므로 이미지들을 span tag나 div태그로 묶어주자 div 쓰면 대신 버튼이 내려감. div영역이 block이기 때문임. 
+		//float 나 display주어도 됨
+		
+	}) */
+	
+	$('#prevBtn').click(function(){ //span에 id 주어도 됨 
+		$('img').last().prependTo('span') // 보통은 id 주어서 함 여기서는 span 하나밖에 없으므로 
+		
+		
+	})
+	$('#nextBtn').click(function(){
+		$('img').first().appendTo('span')
+	
+	})
+	
+	setInterval(function(){
+		$('#nextBtn').click()
+	},5000)
+	//click을 써줘도 되지만 강제로 이벤트를 발생시키게 할 수도 있음 => trigger를 이용해서 강제 이벤트를 발생시킬 수 있음.  
+	setInterval(function(){
+		$('#nextBtn').trigger('click')
+	},5000)
+	
+	
+	
+	//clearInterval도 있음. setInterval 한거 멈추게 할 수도 있음. 
+	
+	
+	
+	
+	//근데 이걸 자동으로 2초마다 이미지가 자동으로 움직이게 하고 싶어짐 setTimeinterval을 사용하자!~ setTimeout은 2초 뒤에 뭐해라~!  
+	//setInterval 2초 간격마다 하고 싶은것임 
+	/* id=setInterval(function(){
+		$('#nextBtn').click()
+	},5000)
+	//click을 써줘도 되지만 강제로 이벤트를 발생시키게 할 수도 있음 => trigger를 이용해서 강제 이벤트를 발생시킬 수 있음.  
+	setInterval(function(){
+		$('#nextBtn').trigger('click')
+	},5000)
+ */ 
+ //id를 통해서 여러개의 interval들을 구분할 수 있군!  
+	
+	
+	
+	
+	//clearInterval(id) // 이렇게 쓰면 됨 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+})
+
+
+
+
+</script>
+
+
+
+
+</head>
+<body>
+	<button id="prevBtn">PREV</button>
+	<span>
+		<img src="image/dog1.jpg">
+		<img src="image/dog2.jpg">
+		<img src="image/dog3.jpg">
+		<img src="image/dog4.jpg">
+	</span>
+	<button id="nextBtn">NEXT</button>
+	
+
+</body>
+</html>

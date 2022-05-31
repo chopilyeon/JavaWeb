@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#msgView{
+		width:500px;
+		height:200px;
+		border:1px solid red;
+	}
+
+
+</style>
+
+
+<script src ="/LectureWeb/jquery/js/jquery-3.6.0.min.js"></script>   
+<!--절대경로로 작서앻주자  -->
+
+<script>
+$(document).ready(function(){ 
+/*html 태그가 필요가 없음 -> 그냥 그 공간에만 html 문서를 붙이고 싶다 이거임. 요청을 클릭하면 글자만 가져 오고 싶다 화면의 일부분만을 수정하고 싶다! hello태그 전부를 다 긁어올 수도 있지만 그러면 너무 비효율적임 hello의 h3 태그만 가져오고 싶어!   */
+
+	$('button').click(function(){
+		/* httpRequest = new XMLHttpRequest();
+		httpRequest.open('get','hello.html',true)
+		 *//*이런식으로 하면 너무 불편함   */
+		/*
+			url  : 요청주소(문자열)
+			type : 요청메소드(문자열)
+			data : 파라미터(문자열, json 객체)
+			success : 수신을 성공하는 경우(함수)
+			error : 수신을 실패 (함수)
+		*/
+		
+		/* $.ajax({
+			url : 'hello.html'
+			, success:function(){
+				alert('성공')
+			},error:function(){ //없는 파일을 url에 쓰면은 실패 뜸 
+				alert('실패')
+			} */
+			//type을 쓰지 않으면 무조건 get 방식임 
+			
+			$.ajax({
+			url : 'hello.html' //server야 hello.html 정보를 좀 줘! 
+			, success:function(data){
+		/* 		alert('data') */
+				$('#msgView').append(data)
+			},error:function(){ //없는 파일을 url에 쓰면은 실패 뜸 
+				alert('실패')
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+		})
+		/*ajax 로 통신하고 싶으면 $.ajax 라고 쓰면됨 get방식 넘기려는 파라미터 url onreadystate status 이런거 필요함 !! 아무런 문제가 없다면    */
+		/*json의 형태로 변수를 가지자~!*/
+		/*ajax는 비동기 통신함  개발자 모드가서 network 가보자  */
+	})
+
+
+})
+</script>
+
+
+
+</head>
+<body>
+	<h2>서버에서 받은 메세지</h2>
+ 	<div id="msgView"></div>
+ 		<h3>Hello Ajax!!</h3> 
+ 		<!-- 화면의 일부분을 수정하고 싶음  html을 다 가져오지 않음 hello Ajax 저게 들어오게 하고 싶어! --> 
+ 	<button>서버에 자료 요청</button>
+
+</body>
+</html>

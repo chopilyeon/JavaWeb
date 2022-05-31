@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+	$('button').click(function(){
+		//선택한 image를 맨앞으로 오게 하고 싶음 선택할 수 있어야 함 eq로 선택하도록 하자! 근데 몇개인지 모르므로 last와 first를 사용하자 그 이외에는 eq!! 
+		$('img').last().prependTo('body') //~의 맨 앞의 자식으로 옮기고 싶다 라는 뜻임 지금은 body 태그의 맨 처음으로 가야함  
+	})
+	
+	
+	
+	
+	
+})
+
+
+
+
+</script>
+
+
+
+
+</head>
+<body>
+	<img src="image/images.jpg">
+	<img src="image/20191114_6a4c967c5b14197dd5d2c47424ae8e82.jpg">
+	<img src="image/20191114_6a4c967c5b14197dd5d2c47424ae8e82.jpg">
+	<img src="image/20191114_6a4c967c5b14197dd5d2c47424ae8e82.jpg">
+	
+	<br>
+	<button>클릭</button>
+	
+
+</body>
+</html>

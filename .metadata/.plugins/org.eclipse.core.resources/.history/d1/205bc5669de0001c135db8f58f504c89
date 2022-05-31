@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script> 
+<!--CDN으로 작성함  -->
+<script>
+$(document).ready(function(){ 
+	$('button').click(function(){
+		$.ajax({
+		url:'param.jsp' //jsp 파일을 받을 것이다! 
+		,type:'get'
+		,data:'name=hong&age=25'
+		,success:function(){
+			alert('성공')
+		},error:function(){
+			alert('실패')
+		}
+			//param.jsp?name=hong & age=25 // param.jsp? 하면은 뭔가를 넘긴다는 뜻임. 지금 우리는 name과 age를 전달하고 싶은 것임. 
+			
+	
+		})
+	})
+	
+	
+	
+	
+})
+</script>
+
+
+</head>
+<body>
+	<textarea rows="10" cols="80" id="msgView"></textarea><br>
+	이름 : <input type="text" name="name"><br> 
+	<!-- class는 하나를 그룹으로 묶어서 관리하기 위한 목적임  -->
+	나이 : <input type="text" name="age"><br>
+	<button>전송</button>	
+	<!--name은  server쪽에 전달하기 위한 목적임   -->
+</body>
+</html>

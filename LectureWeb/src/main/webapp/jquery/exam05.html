@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+	$('h1').click(function(){
+		$(this).css('color','red') //this 대신 h1이 다 바뀜 어떤 애에 대한 0번지인지 1번지인지 2번지인지 . 이벤트가 발생한 애한테 주는것임. 콜백이 실행되는 이벤트가 발생되는 무슨무슨 메소드를 실행했음 -> 그 호출한 객체가 누구인지
+	}) //자바에서의 this랑 아예 다름 
+	//현재 내가 이벤트가 가르킨 객체를 가르키게 됨 h1만 쓰면 싹다 바꿔버림.
+
+	
+	//hover는 무조건 매개변수가 2개가 필요하더라
+	$('h1').hover(function(){
+		console.log('enter')
+		
+	},function(){
+		console.log('leave')
+	})
+	
+	
+	
+	
+	$('h1').mouseenter(function(){
+		console.log(this); // 이렇게 찍어보면 this가 뭘 가르키는지 알 수 있음 
+		$(this).css('background-color','lightgrey')
+	})
+	
+	$('h1').mouseleave(function(){
+		$(this).css('background-color','white')
+	})
+	
+	
+	
+	//위에 거 다 h1과 다 관련된 이벤트임 너무 귀찮음. 이제 h1에 관련된 함수를 정의할 수 있다! on을 쓰자.
+	// h1과 관련된 event를 정의하겠다. 
+	//안에서 json 형태로도 쓸 수 있다. 	
+	$('h1').on({
+		click:function(){
+			$(this).css('color','red')
+			
+		},'mouseenter':function(){
+			$(this).css('background-color','yellow')
+			
+		},mouseleave:function(){
+			$(this).css('background-color','white')
+		}
+		
+	})
+	
+	
+	
+	
+	
+})
+</script>
+<body>
+
+	<h1>첫번째 문장</h1>
+	<h1>두번째 문장</h1>
+	<h1>세번째 문장</h1>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <style>
+ 	#searchResult{
+ 		width:60%;
+ 		height:500px;
+ 		border:1px solid red;
+ 	}
+ </style>
+ 
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+	
+	$('#searchBtn').click(function(){
+		alert('!') // 한번에 코드 짜지 말고 어디서 에러나는지 알기 위해 alert로 해보자. 그런 다음에 조금조금씩 추가를 시키자
+		//ajax 통신을 해보자 
+		
+		$.ajax({
+			//get방식으로 호출함 
+			type:'get'
+			,url:'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json'
+			//필수 입력값인 key와 targetDt가 들어가야함 
+			,data:{
+				key:'284a9136382d4e01d2bd2befb8ed64ed'
+				,targetDt:'20210530'
+			},success:callback			
+			/* success:function(){
+				alert('성공')
+			 */},error:function(){
+				alert('실패')
+			}
+		
+		})
+		
+	
+	
+	
+	})
+
+})
+</script>
+ 
+ 
+ 
+ 
+</head>
+<body>
+
+	<h2>일별 박스오피스 조회서비스</h2>
+	조회날짜 : <input type="date" id="searchDate">
+	<button id="searchBtn">조회</button>
+	<h3>조회 결과</h3>
+	<div id="searchResult"></div>
+</body>
+</html>

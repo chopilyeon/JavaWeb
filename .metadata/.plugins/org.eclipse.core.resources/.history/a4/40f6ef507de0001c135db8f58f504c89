@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{
+		width:150px;
+		height:120px;
+		float:left;  
+		/* 이걸로 div 썼을 때 display:flex 대신 주어도 됨  */
+	}
+	
+	button{
+		height:120px;
+		float:left;
+	}
+	
+	
+
+
+</style>
+
+
+
+
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+//이미지 슬라이더라는 걸 만들어보자! 
+
+
+
+
+
+$(document).ready(function(){ 
+	$('button').click(function(){
+		//선택한 image를 맨앞으로 오게 하고 싶음 선택할 수 있어야 함 eq로 선택하도록 하자! 근데 몇개인지 모르므로 last와 first를 사용하자 그 이외에는 eq!! 
+		$('img').last().prependTo('body') //~의 맨 앞의 자식으로 옮기고 싶다 라는 뜻임 지금은 body 태그의 맨 처음으로 가야함  
+		//버튼때문에 append태그를 사용할 수 없으므로 이미지들을 span tag나 div태그로 묶어주자 div 쓰면 대신 버튼이 내려감. div영역이 block이기 때문임. 
+		//float 나 display주어도 됨
+		
+	})
+	
+	$('#prevBtn').click(function(){ //span에 id 주어도 됨 
+		$('img').last().prependTo('span') // 보통은 id 주어서 함 여기서는 span 하나밖에 없으므로 
+		
+		
+	})
+	$('#nextBtn').click(function(){
+	
+		
+		
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+})
+
+
+
+
+</script>
+
+
+
+
+</head>
+<body>
+	<button id="prevBtn">PREV</button>
+	<span>
+		<img src="image/images.jpg">
+		<img src="image/images.jpg">
+		<img src="image/images.jpg">
+		<img src="image/images.jpg">
+	</span>
+	<br>
+	<button id="nextBtn">NEXT</button>
+	
+
+</body>
+</html>

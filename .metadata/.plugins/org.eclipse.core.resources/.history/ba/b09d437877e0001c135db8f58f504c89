@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+이걸 기본으로 깔고 감 
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+	$('h1').click(function(){
+		$(this).css('color','red') //this 대신 h1이 다 바뀜 
+	})
+	
+
+	$('h1').mouseenter(function(){
+		$(this).css('background-color','lightrey')
+	})
+	
+	$('h1').mouseleave(function(){
+		$(this).css('background-color','white')
+	})
+	
+	
+	
+	
+})
+</script>
+<body>
+
+	<h1>첫번째 문자</h1>
+	<h1>두번째 문장</h1>
+	<h1>세번째 문장</h1>
+</body>
+</html>

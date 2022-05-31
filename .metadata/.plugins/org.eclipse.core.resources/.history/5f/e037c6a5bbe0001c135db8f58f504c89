@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <style>
+ 	#searchResult{
+ 		width:60%;
+ 		height:1000px;
+ 		border:1px solid red;
+ 	}
+ </style>
+ 
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+	
+	
+	
+
+	
+	$('#searchBtn').click(function(){
+		alert('!') // 한번에 코드 짜지 말고 어디서 에러나는지 알기 위해 alert로 해보자. 그런 다음에 조금조금씩 추가를 시키자
+		//ajax 통신을 해보자 
+		let searchDate=$('#searchDate').val().split('-').join('')
+		
+		
+		
+		$.ajax({
+			//get방식으로 호출함 
+			type:'get'
+			,url:'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json'
+			//필수 입력값인 key와 targetDt가 들어가야함 
+			,data:{
+				key:'284a9136382d4e01d2bd2befb8ed64ed'
+				//,targetDt:'20210530'
+				,targetDt:searchDate
+			},datetype:'jsonp'
+			,success:callback			
+			/* success:function(){
+				alert('성공')
+			 */
+			 ,error:function(){
+				alert('실패')
+			}
+		
+	})
+	
+	})	
+	
+	$('#i').click(function(){
+			
+	
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+})
+
+//let callback =function(){}
+function callback(result){
+		console.log(result)
+		console.log(result.boxOfficeResult.dailyBoxOfficeList)
+		let list =result.boxOfficeResult.dailyBoxOfficeList;
+		$('#searchResult').empty() // 기존의 정보는 사라지게 하고 다시 갖고오게 해야함. 
+		for(let i=0;i<list.length;i++){
+		
+			let movieData =list[i]
+			let rank = movieData.rank
+			let name=movieData.movieNm
+			let audiCnt=movieData.audiCnt
+			
+			
+			$('#searchResult').append('<h4>'+rank+'위</h4>')
+			$('#searchResult').append(`<strong>${name}</strong>(${audiCnt}명)`) //$을 쓰므로 referal을 사용하자.
+			$('#searchResult').append(`<br><button id=${i}>상세보기</button>`)
+			$('#searchResult').append('<hr>')
+			/* console.log(list[i])
+			let rank =list[i].rank		
+		 */
+		 }		
+		
+		
+}
+
+//$(document).ready(function(){ 
+	//$('#btn01'),click(function({
+		//})
+	//이러면 ready할 때 button이 없으므로 먹지 않더라~! 
+//}
+
+//document 객체중에 btn01 에다가 click이란 이벤트를 줄거야 받으면은 function을 수행하더라~ 줄거야가운데 있는 애가 대상이야 실제 해야될 일은 function을 주겠다!! 
+$(document).on('click','#btn01',function(){
+	alert('!!!')
+	
+	
+		
+		$.ajax({
+			//get방식으로 호출함 
+			type:'get'
+			,url:' http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.xml'
+			//필수 입력값인 key와 targetDt가 들어가야함 
+			,data:{
+				key:'284a9136382d4e01d2bd2befb8ed64ed'
+				//,targetDt:'20210530'
+				,targetDt:searchDate
+			},datetype:'jsonp'
+			,success:callback			
+			/* success:function(){
+				alert('성공')
+			 */
+			 ,error:function(){
+				alert('실패')
+			}
+		
+	})
+	
+	
+	
+	
+	 http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.xml
+
+
+})
+
+
+
+
+
+
+
+
+
+</script>
+ 
+ 
+ 
+ 
+</head>
+<body>
+
+	<h2>일별 박스오피스 조회서비스</h2>
+	조회날짜 :
+	<input type="date" id="searchDate">
+	<button id="searchBtn">조회</button>
+	<h3>조회 결과</h3>
+	<div id="searchResult"></div>
+</body>
+</html>

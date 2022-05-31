@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <style>
+ 	#searchResult{
+ 		width:60%;
+ 		height:500px;
+ 		border:1px solid red;
+ 	}
+ </style>
+ 
+<script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+$(document).ready(function(){ 
+	
+	$('#searchBtn').click(function(){
+		alert('!')
+	})
+
+})
+</script>
+ 
+ 
+ 
+ 
+</head>
+<body>
+
+	<h2>일별 박스오피스 조회서비스</h2>
+	조회날짜 : <input type="date" id="searchDate">
+	<button id="searchBtn">조회</button>
+	<h3>조회 결과</h3>
+	<div id="searchResult"></div>
+</body>
+</html>
