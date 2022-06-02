@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
   <display-name>LectureWeb</display-name>
+  <!-- http://localhost:9999/Lecture-Web/hello 이렇게 요청시에 
+   	   kr.ac.kopo.servlet.HelloServlet.java가 실행되도록 mapping하고 싶다 이거임 
+   --> 
+   <servlet>
+   		<servlet-name>hello</servlet-name>
+   		<!-- //hello란 이름을 가진놈들은 한 쌍이라는 뜻임 
+   		 -->
+   		 <servlet-class>kr.ac.kopo.servlet.HelloServlet</servlet-class>
+   <!-- 확장자 안붙음 그리고 컨트롤 누르고 들어가면 링크가 잡혀야함  
+    -->
+   </servlet>
+   <servlet>
+   		<servlet-name>method</servlet-name>
+   		<servlet-class>kr.ac.kopo.servlet.MethodServlet</servlet-class>
+   </servlet>
+   
+   
+   
+   
+   <servlet-mapping>
+   		<servlet-name>hello</servlet-name>
+   		<url-pattern>/hello</url-pattern>       
+   		<!-- 경로라서   /가 붙어야함
+   		이걸 실행시키는 가상의 url을  helloServlet와 mapping을 시켜주는 것임.  
+   	    서비스를 요청하는 url이 hi랑 hello둘다 가능함. 
+    -->
+   
+   </servlet-mapping>
+   
+    <servlet-mapping>
+   		<servlet-name>hello</servlet-name>
+   		<url-pattern>/hi</url-pattern>    
+     </servlet-mapping>
+     
+    <servlet-mapping>
+    	<servlet-name>method</servlet-name>
+    	<url-pattern>/method</url-pattern>
+    </servlet-mapping> 
+     
+     
+   <!-- 
+  //나중에는 @webAnotation으로 대체할 수 있더라 
+   -->
+<!--    <servlet>
+   		<servlet-name>exam</servlet-name>
+   		<servlet-class>kr.ac.kopo.servlet.ExamServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+   		<servlet-name>exam</servlet-name>
+   		<url-pattern>/servlet/exam</url-pattern> 
+   		기본적으로 lectureweb이 생략됨   
+   </servlet-mapping>
+  -->
+   
+  
+  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -9,4 +65,4 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-</web-app>
+</web-app> 

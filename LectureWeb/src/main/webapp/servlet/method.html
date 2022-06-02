@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<!-- http://localhost:9999://Lecture-Web/method 요청  -->
+	<!--submit 버튼 누르면 저 url 로 가야함   -->
+	
+	<form action="/LectureWeb/method" method="get">
+	<!--같은 서버에 있으므로 절대 경로만 써줄 것임. -->
+		ID:<input type="text" name="id">
+		<input type="submit" value="GET방식 호출">
+	</form>
+	
+	<!--post로 바꿔보겠다   -->
+	<form action="/LectureWeb/method" method="post">
+	<!--같은 서버에 있으므로 절대 경로만 써줄 것임. -->
+		ID:<input type="text" name="id">
+		<input type="submit" value="post방식 호출">
+	</form>
+	
+	<!-- html 실행과 suvlet 실행이 같은 서버내에 있으니까 "http://localhost:9999/LectureWeb/servlet/exam 으로 써야 함-->
+	 <!--http:localhost:9999/LectureWeb/servlet/exam?name=hong&hobby=reading-->
+	<!--localhost에 있는 절대경로만 써줘도 됨   -->
+	<form action="/LectureWeb/servlet/exam" method="get"> 
+	<!--같은 서버에 있으므로 절대 경로만 써줄 것임. -->
+		NAME:<input type="text" name="name">
+		<input type="submit" value="post방식 호출">
+		<!--name을 hobby로 다 묶어줘야함 근데 values없이 쓰면 url에 on 들어감 나옴   -->
+		취미: 
+		<input type="checkbox" name="hobby" value="reading">reading
+		<input type="checkbox" name="hobby" value="music">reading
+		<input type="checkbox" name="hobby" value="movie">reading
+		<input type="submit" name="전송">reading
+	</form>
+<!--servlet 3.0 이 오면서 내가 설정해야되는거를  annotaiton으로 대체가 됨 -> annotion으로 대체가 됨 @ WebServlet 이라는 annotation을 배치해줌 거기에 가상의 url을 써줄 수 있음   -->
+	
+	
+	
+	
+	
+	
+</body>
+</html>
