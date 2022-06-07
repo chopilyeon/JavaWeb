@@ -33,7 +33,7 @@
 		}
 		if(f.content.value==''){
 			alert('내용을 입력하세요')
-			f.contetn.focus()
+			f.content.focus()
 			return false
 		}
 		

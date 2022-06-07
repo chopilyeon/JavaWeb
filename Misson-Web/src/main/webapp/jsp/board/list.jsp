@@ -78,7 +78,9 @@ checked exception인데 왜 try catch 안쓰지? -> jsp 가 내부적으로는 s
 		%>	
 			<tr>
 				<td><%= no %></td>
-				<td><%=title %></td>
+				<!--detail에 대한 번호가 필요함 1번 게시물 2번 게시물 이런거 위에 no과 관련이 있음  -->
+				<!--jsp 는 그냥 문자열만 알음~! jsp를 가장 먼저 해석하므로 no을 숫자로 인식을 하더라는 것임  -->
+				<td><a href="detail.jsp?no=<%=no%>"><%=title %></a></td>
 				<td><%=writer %></td>
 				<td><%=regDate %></td>
 			</tr>
